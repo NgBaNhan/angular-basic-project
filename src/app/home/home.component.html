@@ -1,0 +1,51 @@
+<div class="wrapper-cart">
+      <h1>Shopping Cart</h1>
+      <button (click)="handleToggleVisibility()"> Oke
+      </button>
+      <div *ngIf="blogs$ | async as blogs">
+            <app-product-item *ngIf="isVisible" [products]="blogs"
+                  (dataEvent)="handleDelete($event)"></app-product-item>
+      </div>
+      <!-- <app-product-item [products]="products" (deleteProduct)="handleDelete($event)"></app-product-item> -->
+
+</div>
+
+<!-- <br>
+      <div>{{title.name}}</div>
+      <div>{{title.old}}</div> -->
+<!-- properties -->
+<!-- <button [disabled]="isDisable">Click</button> -->
+<!-- attributes -->
+<!-- <img src="" alt="Logo {{title.name}}"> -->
+<!-- event -->
+<!-- <h1>Click for the event</h1>
+      <button (click)="handleClickMe()">
+            {{ isDisable ? 'Bật' : 'Tắt' }}
+      </button>
+      <div>
+            Status: {{ isDisable ? 'Tắt' : 'Bật' }}
+      </div> -->
+<!-- <input type="text" #text (keydown)="updateField(text.value)"> -->
+<!-- <input (keyup)="updateField($event)">
+      <div (mouseenter)="handleMouseEnter()" (mouseleave)="handleMouseEnter()" [class.active]="isHover">
+            Hover me
+      </div> -->
+<!-- Two-way binding input-->
+<!-- <input type="text" [(ngModel)]="bindingMessage">
+      <div>Binding 1: {{bindingMessage}}</div> -->
+<!-- button binding -->
+<!-- Binding 2: <input [(ngModel)]="message">
+      <div>{{ message }}</div>
+      <button (click)="message = 'Angular'">
+            Change
+      </button>
+      <!-- checkbox binding -->
+<!-- <input type="checkbox" [(ngModel)]="isChecked">
+      <p>{{ isChecked }}</p> -->
+<!-- select binding -->
+<!-- <select [(ngModel)]="selectedCity">
+            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+      </select>
+      <p>City: {{ selectedCity }}</p> -->

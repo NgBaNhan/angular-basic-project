@@ -1,0 +1,36 @@
+<div class="group-cart">
+    <!-- Phần tiêu đề các cột -->
+    <div class="header-cart">
+        <div class="col-1">Image</div>
+        <div class="col-2">Name</div>
+        <div class="col-3">Price</div>
+        <div class="col-4">Action</div>
+    </div>
+
+    <!-- Phần thân chứa danh sách sản phẩm -->
+    <div class="body-cart">
+        <div class="row-cart" *ngFor="let product of products">
+            <!-- Cột 1: Hình ảnh sản phẩm -->
+            <div class="col-1">
+                <a [routerLink]="['/detail', product.id]" (click)="goToDetail(product.id)">
+                    <img src="{{product.image}}" alt="Hinh:{{product.name}}" />
+                </a>
+            </div>
+            <!-- Cột 2: Tên sản phẩm -->
+            <div class="col-2">{{ product.name | titlecase }}</div>
+            <!-- Cột 3: Giá sản phẩm -->
+            <div class="col-3">{{product.price| currencyPipe}}</div>
+            <!-- Cột 4: Nút xóa sản phẩm -->
+            <div class="col-4">
+                <div class="btn-main" (click)="handleDelete(product.id)">
+                    <img src="assets/images/bin.jpg" alt="Delete" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-cart">
+        <div class="total-price">Total Price: {{ totalPrice | currencyPipe }}</div>
+        <div class="product-count">Products: {{ productCount }}</div>
+    </div>
+</div>

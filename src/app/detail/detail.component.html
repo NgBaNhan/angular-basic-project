@@ -1,0 +1,9 @@
+<div class="wrapper-cart">
+    <h1>Detail Product</h1>
+    <div class="product-detail">
+        <img src="{{ productItem.image }}" alt="Hinh:{{ productItem.name }}" />
+        <h3>Name: {{ productItem.name }} || Id: {{ productItem.id }}</h3>
+        <h4>Price: {{ productItem.price | currencyPipe }}</h4>
+    </div>
+
+</div>
